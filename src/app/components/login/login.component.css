@@ -1,3 +1,14 @@
 div.error {
-    color: red;
+    color: #eb2028;
+}
+img.logo {
+    margin-left: -50px;
+    margin-bottom: 10px;
+}
+div.centered {
+    margin: 0 auto;
+    width:50%
+}
+label {
+    color: #fff
 }
