@@ -14,7 +14,6 @@ import { MainComponent } from './components/main/main.component';
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent,
     MainComponent
   ],
   imports: [

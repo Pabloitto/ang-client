@@ -6,7 +6,10 @@ export class BaseService {
   constructor(private _http: Http) { }
   doPost (path: string, data: any) {
     return this._http.post(BASE_URL + path, data)
-        .map(response => response.json())
+        .map(response => {
+          console.log(response)
+          return response.json()
+        })
         .toPromise()
         .catch(error => error.json())
   }

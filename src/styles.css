@@ -1,3 +1,7 @@
 body {
     background-color: #87CEFA;
 }
+div.centered {
+    margin: 0 auto;
+    width:50%
+}
