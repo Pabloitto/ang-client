@@ -6,8 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  menuItems: any
+  constructor() {
+    this.menuItems = [
+      { text: 'Usuarios', path: '/#/usuarios', active: true },
+      { text: 'Articulos', path: '/#/articulos', active: false },
+      { text: 'Configuracion', path: '/#/configuracion', active: false }
+    ]
+  }
+  selectItem (menuItem) {
+    this.menuItems.forEach(function(item) {
+      item.active = false
+    })
+    menuItem.active = true
+  }
 
   ngOnInit() {
   }

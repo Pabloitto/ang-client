@@ -2,7 +2,6 @@
   <div>
     <img [src]="logoPath">
   </div>
-  <div class='error' *ngIf='user.errorMessage'>{{user.errorMessage}}</div>
   <form (submit)='handleSumbit($event)' ngNativeValidate>
     <div class="form-group">
       <label>Email address</label>
@@ -29,3 +28,6 @@
     <button type="submit" class="btn btn-danger">Submit</button>
   </form>
 </div>
+<ct-modal #errorModal title='Error'>
+  <div class='error' *ngIf='user.errorMessage'>{{user.errorMessage}}</div>
+</ct-modal>

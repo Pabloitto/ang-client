@@ -6,13 +6,18 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { routing } from './app.routing'
+import { ModalComponent } from './components/modal/modal.component';
+import { MainComponent } from './components/main/main.component';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ModalComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,6 @@ import 'rxjs/add/operator/toPromise';
     routing
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [MainComponent]
 })
 export class AppModule { }
