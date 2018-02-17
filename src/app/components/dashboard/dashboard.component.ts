@@ -9,7 +9,7 @@ export class DashboardComponent implements OnInit {
   menuItems: any
   constructor() {
     this.menuItems = [
-      { text: 'Usuarios', path: '/#/usuarios', active: true },
+      { text: 'Usuarios', path: '/#/dashboard/usuarios', active: true },
       { text: 'Articulos', path: '/#/articulos', active: false },
       { text: 'Configuracion', path: '/#/configuracion', active: false }
     ]

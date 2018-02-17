@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ModalComponent implements OnInit {
   modalVisible: boolean = false
   @Input() title: string = ''
+  @Input() actions = []
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +20,10 @@ export class ModalComponent implements OnInit {
 
   hide () {
     this.modalVisible = false
+  }
+
+  handleClick(action) {
+    action.onClick(this)
   }
 
 }

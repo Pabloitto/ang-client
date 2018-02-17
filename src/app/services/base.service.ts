@@ -14,4 +14,11 @@ export class BaseService {
     }).toPromise()
     .catch(function(err) {return err.json()})
   }
+  doGet(path) {
+    const url = `${BASE_URL}${path}`
+    return this._http.get(url).map(function(response){
+        return response.json()
+    }).toPromise()
+    .catch(function(err) {return err.json()})
+  }
 }

@@ -1,12 +1,17 @@
-<nav class="navbar navbar-expand-sm bg-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item" *ngFor='let menuItem of menuItems'>
-      <a
-        class="nav-link"
-        href="{{menuItem.path}}"
-        [ngClass]="{'item-active': menuItem.active === true}"
-        (click)='selectItem(menuItem)'
-        >{{menuItem.text}}</a>
-    </li>
-  </ul>
-</nav>
+<div>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngFor='let menuItem of menuItems'>
+        <a
+          class="nav-link"
+          href="{{menuItem.path}}"
+          [ngClass]="{'item-active': menuItem.active === true}"
+          (click)='selectItem(menuItem)'
+          >{{menuItem.text}}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class='container'>
+    <router-outlet></router-outlet>
+  </div>
+</div>

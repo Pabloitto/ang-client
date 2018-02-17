@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { routing } from './app.routing'
-import { ModalComponent } from './components/modal/modal.component';
 import { MainComponent } from './components/main/main.component';
+import { ModalModule } from './components/modal/modal.module';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -15,14 +14,13 @@ import 'rxjs/add/operator/toPromise';
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent,
-    ModalComponent,
     MainComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ModalModule,
     routing
   ],
   providers: [],

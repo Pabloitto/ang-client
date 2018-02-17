@@ -1,3 +1,6 @@
 div.visible {
     display: inline;
 }
+button{
+    margin-left: 5px;
+}

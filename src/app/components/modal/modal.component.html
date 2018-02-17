@@ -11,7 +11,14 @@
         <ng-content></ng-content>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)='hide()'>Close</button>
+        <div *ngIf='actions && actions.length > 0'>
+          <button
+            (click)='handleClick(action)'
+            class='btn {{action.btnClass}}'
+            *ngFor='let action of actions'>
+            {{action.text}}
+          </button>
+        </div>
       </div>
     </div>
   </div>
