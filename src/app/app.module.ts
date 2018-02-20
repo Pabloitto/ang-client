@@ -10,11 +10,13 @@ import { ModalModule } from './components/modal/modal.module';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { ToUpperCaseDirective } from './directives/to-upper-case.directive';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    MainComponent
+    MainComponent,
+    ToUpperCaseDirective
   ],
   imports: [
     BrowserModule,

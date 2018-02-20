@@ -1,9 +1,11 @@
 <div>
-  <button class='btn btn-success' (click)='usuariosModal.show()'>
+  <a class='btn btn-success' (click)='usuariosModal.show()'>
+    <span class='fa fa-plus'></span>
     Crear nuevo usuario
-  </button>
+  </a>
   <ct-modal
     #usuariosModal
+    (onClose)='user.clear()'
     title='Usuarios'
     [actions]='actions'
     >
@@ -46,9 +48,30 @@
         </div>
     </form>
   </ct-modal>
-  <ul class='list-group'>
-    <li class='list-group-item' *ngFor='let user of users'>
-      {{user.name}} {{user.email}}
-    </li>
-  </ul>
+  <i *ngIf='loading===true' class='fa fa-spin fa-spinner'></i>
+  <table class='table table-hover table-dark'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let user of users'>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <a class='btn btn-info' (click)='editarUsuario(user, usuariosModal)'>
+            <span class='fa fa-pencil'></span>
+            Editar
+          </a>
+          <button class='btn btn-danger' (click)='borrarUsuario(user)'>
+            <span class='fa fa-trash'></span>
+            Borrar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

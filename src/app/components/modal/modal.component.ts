@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ct-modal',
@@ -9,6 +9,7 @@ export class ModalComponent implements OnInit {
   modalVisible: boolean = false
   @Input() title: string = ''
   @Input() actions = []
+  @Output() onClose: EventEmitter<any> = new EventEmitter<any>()
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class ModalComponent implements OnInit {
 
   hide () {
     this.modalVisible = false
+    this.onClose.emit()
   }
 
   handleClick(action) {
